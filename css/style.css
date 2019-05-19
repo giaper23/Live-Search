@@ -1,10 +1,10 @@
 body {
 
-    background-image: url("../images/background.jpg");
+    background-image: url("../images/background4.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: white;
+    color: black;
 
 }
 
@@ -14,8 +14,15 @@ h2 {
     text-align: center;
     font-weight: bolder;
     font-size: 46px;
-    text-shadow: 1px 1px 10px lightblue;
+    text-shadow: 1px 1px 10px rgb(79, 238, 243);
     color: white;
+
+}
+
+.input-group-addon {
+
+    font-family: 'Teko', cursive;
+    font-size: 20px; 
 
 }
 
@@ -23,26 +30,48 @@ img {
 
     width: 100px;
     height: 100px;
-    box-shadow: 1px 1px 5px lightblue;
+    box-shadow: 1px 1px 5px black;
 
 }
 
-td, th {
+#title {
 
-    text-align: center;
-    font-family: 'Teko', sans-serif;
+    color: white;
+    font-family: 'Teko', cursive;
+    font-size: 58px;
+    text-shadow: 1px 1px 3px black;
 
 }
 
-th {
+#developer {
 
+    font-family: 'Teko', cursive;
+    text-align: right;
+    color: black;
     font-size: 22px;
 
 }
 
-td {
+li {
 
-    font-size: 36px;
-    text-shadow: 1px 1px 5px lightblue;
+    box-shadow: 1px 1px 10px black;
+
+}
+
+#year {
+
+    color: black;
+    font-family: 'Teko', cursive;
+    font-size: 18px;
+
+}
+
+#not_found {
+
+    text-shadow: 1px 1px 5px black;
+    font-family: 'Poiret One', cursive;
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;  
 
 }

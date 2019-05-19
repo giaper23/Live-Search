@@ -14,11 +14,11 @@
  <body>
   <div class="container">
    <br />
-   <h2>My PS4 Game Database</h2><br />
+   <h2>PS4 Game Library</h2><br />
    <div class="form-group">
     <div class="input-group">
      <span class="input-group-addon">Search:</span>
-     <input type="text" name="search_text" id="search_text" class="form-control" placeholder="Title or developer..."/>
+     <input type="text" name="search_text" id="search_text" class="form-control" placeholder="Game or developer..."/>
     </div>
    </div>
    <br />

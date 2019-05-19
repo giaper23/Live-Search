@@ -13,7 +13,7 @@ if(isset($_POST["query"]))
 }
 else
 {
-    // This query returns empty!! Had trouble returning empty!
+    // This query returns empty!! Had trouble returning empty until I found this!
  $query = "
   SELECT 1 FROM dual WHERE false
  ";
@@ -21,30 +21,24 @@ else
 $result = mysqli_query($connect, $query);
 if(mysqli_num_rows($result) > 0)
 {
- $output .= '
-  <div class="table-responsive">
-   <table class="table bordered">
-    <tr>
-     <th>Cover:</th>
-     <th>Title:</th>
-     <th>Developer:</th>
-    </tr>
- ';
  while($row = mysqli_fetch_array($result))
  {
   $output .= '
-   <tr>
-    <td><img src='.$row["cover"].'></td>
-    <td>'.$row["title"].'</td>
-    <td>'.$row["developer"].'</td>
-   </tr>
+   <ul>
+      <li class="list-group-item">
+         <img src='.$row["cover"].'> &nbsp
+         <span id="title">'.$row["title"].'</span><span id="year"> &nbsp ('.$row["year"].')</span>  
+         <span id="developer"> &nbsp &nbsp developed by: '.$row["developer"].'</span><br>
+         
+      </li>
+   </ul>
   ';
  }
  echo $output;
 }
 else
 {
- echo 'Data Not Found';
+ echo '<span id="not_found">Data not found!</span>';
 }
 
 ?>
