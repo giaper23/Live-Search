@@ -25,12 +25,11 @@ if(mysqli_num_rows($result) > 0)
  {
   $output .= '
    <ul>
-      <li class="list-group-item">
-         <img src='.$row["cover"].'> &nbsp
-         <span id="title">'.$row["title"].'</span><span id="year"> &nbsp ('.$row["year"].')</span>  
-         <span id="developer"> &nbsp &nbsp developed by: '.$row["developer"].'</span><br>
-         
-      </li>
+         <li class="list-group-item">
+            <img src='.$row["cover"].'> &nbsp
+            <span id="title">'.$row["title"].'</span><span id="year"> &nbsp ('.$row["year"].')</span>  
+            <span id="developer"> &nbsp &nbsp developed by: '.$row["developer"].'</span><br>
+         </li>
    </ul>
   ';
  }
@@ -38,7 +37,7 @@ if(mysqli_num_rows($result) > 0)
 }
 else
 {
- echo '<span id="not_found">Data not found!</span>';
+ echo '<span id="not_found"> Data not found! </span>';
 }
 
 ?>
