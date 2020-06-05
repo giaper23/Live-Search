@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jun 05, 2020 at 07:12 PM
--- Server version: 10.0.38-MariaDB-cll-lve
--- PHP Version: 7.3.6
+-- Host: 127.0.0.1
+-- Generation Time: Jun 05, 2020 at 06:26 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,53 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `giaper_live_search`
+-- Database: `live_search`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `articles`
---
-
-CREATE TABLE `articles` (
-  `article_id` int(10) UNSIGNED NOT NULL,
-  `article_title` varchar(60) NOT NULL,
-  `article_text` text NOT NULL,
-  `username` varchar(60) NOT NULL,
-  `article_timestamp` text NOT NULL,
-  `article_edit_timestamp` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `articles`
---
-
-INSERT INTO `articles` (`article_id`, `article_title`, `article_text`, `username`, `article_timestamp`, `article_edit_timestamp`) VALUES
-(7, 'Ena post (UPDATED)', 'ena post', 'user', '23/02/2020 19:16:52', '23/02/2020 19:17:46'),
-(10, 'ADMIN (UPDATE)', 'ADMINPOST', 'admin', '23/02/2020 19:18:47', '23/02/2020 19:19:01'),
-(11, 'Neo post UPDATE', 'Neo post', 'user', '23/02/2020 19:29:20', '23/02/2020 19:29:32');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `emailverification`
---
-
-CREATE TABLE `emailverification` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `email` varchar(60) NOT NULL,
-  `selector` varchar(16) NOT NULL,
-  `token` varchar(32) NOT NULL,
-  `expires` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `emailverification`
---
-
-INSERT INTO `emailverification` (`id`, `email`, `selector`, `token`, `expires`) VALUES
-(3, 'knowone23@hotmail.com', '73d77980413e8bc6', 'dacb18facb7f97bb64accfe167dfa269', '1581101843');
 
 -- --------------------------------------------------------
 
@@ -116,40 +70,6 @@ INSERT INTO `games` (`id`, `title`, `cover`, `trailer`, `developer`, `info`, `ye
 (26, 'Yakuza Kiwami 2', 'https://upload.wikimedia.org/wikipedia/en/7/7f/Yakuza_Kiwami_2.png', 'https://www.youtube.com/embed/Rjhpn-uiOT0', 'Sega', 'One year after the 10 billion yen incident, Kazuma Kiryu begins to build a peaceful life with Haruka Sawamura. Tearing him away, an assassination threatens to erupt in an all-out war between the Tojo Clan and the Omi Alliance. Kiryu, the Dragon of Dojima, must travel to Sotenbori, Osaka in an attempt to broker peace between the rival clans, but Ryuji Goda, known as the Dragon of Kansai, will stop at nothing to get his war. In this world, there can only be one dragon.', 2017),
 (27, 'Yakuza 6: The Song of Life', 'https://upload.wikimedia.org/wikipedia/en/9/95/Yakuza_6_cover_art.jpg', 'https://www.youtube.com/embed/vk3Q7HcUGbk', 'Sega', 'Three years after the events of Yakuza 5, Kazuma Kiryu, the Dragon of Dojima, returns in Yakuza 6: The Song of Life with the dream of living a quiet life. Upon his arrival, he discovers Haruka has been involved in an accident and has slipped into a coma, leaving her young son, Haruto, without care. To protect this child, Kiryu takes Haruto to the last place Haruka was spotted, Onomichi, Hiroshima. There, a new and merciless world of Yakuza awaits the unlikely pair. Who is Haruto\'s father and why are the Tojo Clan and Yomei Alliance both after him? With some unlikely friends, Kiryu will have to navigate through the criminal underworld he left behind and fight for the answers to keep the family he loves safe.', 2016);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `passwordreset`
---
-
-CREATE TABLE `passwordreset` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `email` varchar(60) NOT NULL,
-  `selector` varchar(16) NOT NULL,
-  `token` varchar(32) NOT NULL,
-  `expires` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `id` int(100) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES
-(1, 'user', 'password', 'email@email.com');
-
 --
 -- Indexes for dumped tables
 --
@@ -161,12 +81,6 @@ ALTER TABLE `games`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -175,12 +89,6 @@ ALTER TABLE `users`
 --
 ALTER TABLE `games`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
